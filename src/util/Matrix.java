@@ -25,6 +25,10 @@ public class Matrix {
     /**
      * Creates square matrix with default
      * size and content (5 x 5 with all elements == 0).
+     *
+     * @param size int value, which stands for numbers of rows an columns of square
+     *             matrix we want to create.
+     *
      * @see Matrix#Matrix(int, int)
      * @see Matrix#Matrix(int, int, int)
      * */
@@ -40,6 +44,11 @@ public class Matrix {
     /**
      * Creates matrix with inputted size ("rows", "cols") and
      * default content (with all elements == 0).
+     *
+     * @param rows in value, which stands for number of rows in matrix we want to create.
+     *
+     * @param cols in value, which stands for number of columns in matrix we want to create.
+     *
      * @see Matrix#Matrix(int)
      * @see Matrix#Matrix(int, int, int)
      * */
@@ -56,6 +65,13 @@ public class Matrix {
     /**
      * Creates matrix with inputted size and
      * content ("rows", "cols" and "initialValue").
+     *
+     * @param rows in value, which stands for number of rows in matrix we want to create.
+     *
+     * @param cols in value, which stands for number of columns in matrix we want to create.
+     *
+     * @param initialValue int value, which will all matrix's elements be initialized with.
+     *
      * @see Matrix#Matrix(int)
      * @see Matrix#Matrix(int, int)
      * */
@@ -128,7 +144,12 @@ public class Matrix {
 
     /**
      * This static method returns result of matrix multiplication of two inputed matrices
-     * (Matrix class instances).
+     * (Matrix class instances).<br>
+     *
+     * Attention!
+     * This method is a simple realisation of Matrix-to-Matrix multiplication algorithm. Search
+     * for more information about this algorithm in any High Math educational resources to understand
+     * full logic of this method.
      *
      * @param matrixA Matrix class instances, that have suitable sizes
      *                (validated in isMatrix() method and firs "if" statement).
@@ -137,11 +158,6 @@ public class Matrix {
      *
      * @return result matrix (Matrix class instance) if success an
      * null if inputed arguments are wrong.
-     *
-     * <b>Attention!</b>
-     * This method is a simple realisation of Matrix-to-Matrix multiplication algorithm. Search
-     * for more information about this algorithm in any High Math educational resources to understand
-     * full logic of this method.
      * */
     public static Matrix multiply(Matrix matrixA, Matrix matrixB) {
         if (!isMatrix(matrixA.get()) || !isMatrix(matrixB.get()) ||
@@ -169,7 +185,14 @@ public class Matrix {
 
     /**
      * This method returns result of matrix multiplication of current (this) matrix
-     * and inputed matrix (Matrix class instance).
+     * and inputed matrix (Matrix class instance).<br>
+     *
+     * All logic description could be found in documentation of static "multiply(Matrix, Matrix)" method.<br>
+     *
+     * Attention!
+     * This method is a simple realisation of Matrix-to-Matrix multiplication algorithm. Search
+     * for more information about this algorithm in any High Math educational resources to understand
+     * full logic of this method.
      *
      * @param matrix Matrix class instances, that has suitable sizes
      *               (validated in isMatrix() method and firs "if" statement).
@@ -177,12 +200,6 @@ public class Matrix {
      * @return result matrix (Matrix class instance) if success an
      * null if inputed argument or current matrix are wrong.
      *
-     * <b>Attention!</b>
-     * This method is a simple realisation of Matrix-to-Matrix multiplication algorithm. Search
-     * for more information about this algorithm in any High Math educational resources to understand
-     * full logic of this method.
-     *
-     * All logic description could be found in documentation of static "multiply(Matrix, Matrix)" method.
      * @see Matrix#multiply(Matrix, Matrix)
      * */
     public Matrix multiply(Matrix matrix) {
@@ -191,7 +208,12 @@ public class Matrix {
 
     /**
      * This static method returns result of matrix multiplication of matrix (Matrix class instances)
-     * and integer number.
+     * and integer number.<br>
+     *
+     * Attention!
+     * This method is a simple realisation of Matrix-to-Number multiplication algorithm. Search
+     * for more information about this algorithm in any High Math educational resources to understand
+     * full logic of this method.
      *
      * @param matrix Matrix class instances, that has suitable sizes
      *               (validated in isMatrix() method and firs "if" statement).
@@ -200,11 +222,6 @@ public class Matrix {
      *
      * @return result matrix (Matrix class instance) if success an
      * null if inputed arguments are wrong.
-     *
-     * <b>Attention!</b>
-     * This method is a simple realisation of Matrix-to-Number multiplication algorithm. Search
-     * for more information about this algorithm in any High Math educational resources to understand
-     * full logic of this method.
      * */
     public static Matrix multiply(Matrix matrix, int number) {
         if (!isMatrix(matrix.get())) {
@@ -227,7 +244,14 @@ public class Matrix {
 
     /**
      * This method returns result of matrix multiplication of current (this) matrix
-     * and integer number.
+     * and integer number. <br>
+     *
+     * All logic description could be found in documentation of static "multiply(Matrix, int)" method.<br>
+     *
+     * Attention!
+     * This method is a simple realisation of Matrix-to-Number multiplication algorithm. Search
+     * for more information about this algorithm in any High Math educational resources to understand
+     * full logic of this method.
      *
      * @param number integer value, which first argument (Matrix class instance)
      *               will be multiplied by.
@@ -235,12 +259,6 @@ public class Matrix {
      * @return result matrix (Matrix class instance) if success an
      * null if inputed argument or current matrix are wrong.
      *
-     * <b>Attention!</b>
-     * This method is a simple realisation of Matrix-to-Number multiplication algorithm. Search
-     * for more information about this algorithm in any High Math educational resources to understand
-     * full logic of this method.
-     *
-     * All logic description could be found in documentation of static "multiply(Matrix, int)" method.
      * @see Matrix#multiply(Matrix, int)
      * */
     public Matrix multiply(int number) {
@@ -248,8 +266,13 @@ public class Matrix {
     }
 
     /**
-     * This static method returns reference on formatted matrix argument (Matrix class instance).
-     * for_teacher.Main logic is to fill matrix with "digit" value.
+     * This static method returns reference on formatted matrix argument (Matrix class instance).<br>
+     *
+     * Main logic is to fill matrix with "digit" value.<br>
+     *
+     * Attention!
+     * This method doesn't create new instance of Matrix class. It changes inputed value by
+     * its reference. So, be careful when use it!
      *
      * @param matrix Matrix class instance, that has suitable sizes
      *               (validated in isMatrix() method and firs "if" statement).
@@ -258,10 +281,6 @@ public class Matrix {
      *
      * @return reference on changed arguement matrix (Matrix class instance) if success and
      * null if inputed arguments are wrong.
-     *
-     * <b>Attention!<b/>
-     * This method doesn't create new instance of Matrix class. It changes inputed value by
-     * its reference. So, be careful when use it!
      * */
     public static Matrix fill(Matrix matrix, int digit) {
         if (!isMatrix(matrix.get())) {
@@ -278,7 +297,13 @@ public class Matrix {
     }
 
     /**
-     * This method returns reference on formatted (refilled) current (this) matrix.
+     * This method returns reference on formatted (refilled) current (this) matrix.<br>
+     *
+     * All logic description could be found in documentation of static "fill(Matrix, int)" method.<br>
+     *
+     * Attention!
+     * This method doesn't create new instance of Matrix class. It changes inputed value by
+     * its reference. So, be careful when use it!
      *
      * @param digit integer value, which first argument (Matrix class instance)
      *              will be filled with.
@@ -286,11 +311,6 @@ public class Matrix {
      * @return reference on changed current matrix (Matrix class instance) if success and
      * null if inputed arguement or currenr matrix are wrong.
      *
-     * <b>Attention!<b/>
-     * This method doesn't create new instance of Matrix class. It changes inputed value by
-     * its reference. So, be careful when use it!
-     *
-     * All logic description could be found in documentation of static "fill(Matrix, int)" method.
      * @see Matrix#fill(Matrix, int)
      * */
     public Matrix fill(int digit) {
@@ -299,18 +319,18 @@ public class Matrix {
 
     /**
      * This static method returns result of matrix transpose of inputed matrix
-     * (Matrix class instances).
+     * (Matrix class instances).<br>
+     *
+     * Attention!
+     * This method is a simple realisation of Matrix transpose algorithm. Search
+     * for more information about this algorithm in any High Math educational resources to understand
+     * full logic of this method.
      *
      * @param matrix Matrix class instance, that has suitable sizes
      *               (validated in isMatrix() method and firs "if" statement).
      *
      * @return result matrix (Matrix class instance) if success and
      * null if inputed arguments are wrong.
-     *
-     * Attention!
-     * This method is a simple realisation of Matrix transpose algorithm. Search
-     * for more information about this algorithm in any High Math educational resources to understand
-     * full logic of this method.
      * */
     public static Matrix transpose(Matrix matrix) {
         if (!isMatrix(matrix.get())) {
@@ -333,12 +353,13 @@ public class Matrix {
     }
 
     /**
-     * This method returns result of matrix transpose of current (this) matrix.
+     * This method returns result of matrix transpose of current (this) matrix.<br>
+     *
+     * All logic description could be found in documentation of static "transpose(Matrix)" method.
      *
      * @return result matrix (Matrix class instance) if success and
      * null if inputed current matrix is wrong.
      *
-     * All logic description could be found in documentation of static "transpose(Matrix)" method.
      * @see Matrix#transpose(Matrix)
      * */
     public Matrix transpose() {
@@ -347,7 +368,12 @@ public class Matrix {
 
     /**
      * This static method returns result of matrix summing of two inputed matrices
-     * (Matrix class instances).
+     * (Matrix class instances).<br>
+     *
+     * Attention!
+     * This method is a simple realisation of Matrix-toMatrix summing algorithm. Search
+     * for more information about this algorithm in any High Math educational resources to understand
+     * full logic of this method.
      *
      * @param matrixA Matrix class instances, that have suitable sizes
      *                (validated in isMatrix() method and firs "if" statement).
@@ -356,11 +382,6 @@ public class Matrix {
      *
      * @return result matrix (Matrix class instance) if success and
      * null if inputed arguments are wrong.
-     *
-     * Attention!
-     * This method is a simple realisation of Matrix-toMatrix summing algorithm. Search
-     * for more information about this algorithm in any High Math educational resources to understand
-     * full logic of this method.
      * */
     public static Matrix add(Matrix matrixA, Matrix matrixB) {
         if (!isMatrix(matrixA.get()) || !isMatrix(matrixB.get()) ||
@@ -384,7 +405,9 @@ public class Matrix {
 
     /**
      * This method returns result of matrix summing of current (this) matrix and inputed matrix
-     * (Matrix class instances).
+     * (Matrix class instances).<br>
+     *
+     * All logic description could be found in documentation of static "add(Matrix, Matrix)" method.
      *
      * @param matrix Matrix class instance, that has suitable sizes
      *               (validated in isMatrix() method and firs "if" statement).
@@ -392,7 +415,6 @@ public class Matrix {
      * @return result matrix (Matrix class instance) if success and
      * null if inputed argument or current matrix are wrong.
      *
-     * All logic description could be found in documentation of static "add(Matrix, Matrix)" method.
      * @see Matrix#add(Matrix, Matrix)
      * */
     public Matrix add(Matrix matrix) {
@@ -401,7 +423,6 @@ public class Matrix {
 
     /**
      * This static method returns the biggest element of inputed matrix (Matrix class instance).
-     *
      * Main logic is to search for the biggest element in matrix using nested "for()" statements.
      *
      * @param matrix Matrix class instance, that has suitable sizes
@@ -429,12 +450,13 @@ public class Matrix {
     }
 
     /**
-     * This method returns the biggest element of current (this) matrix.
+     * This method returns the biggest element of current (this) matrix.<br>
+     *
+     * All logic description could be found in documentation of static "getMaximum(Matrix)" method.
      *
      * @return result int value (Integer class instance) if success and
      * null if current matrix is wrong.
      *
-     * All logic description could be found in documentation of static "getMaximum(Matrix)" method.
      * @see Matrix#getMaximum(Matrix)
      * */
     public Integer getMaximum() {
@@ -442,7 +464,7 @@ public class Matrix {
     }
 
     /**
-     * This static method returns result of sorting of inputed matrix's rows.
+     * This static method returns result of sorting of inputed matrix's rows.<br>
      *
      * Main logic is to sort each row of inputed matrix (Matrix class instance)
      * using "sort()" method from Arrays library (java.util.Arrays). Sorted
@@ -473,12 +495,13 @@ public class Matrix {
     }
 
     /**
-     * This method returns result of sorting of current (this) matrix's rows.
+     * This method returns result of sorting of current (this) matrix's rows.<br>
+     *
+     * All logic description could be found in documentation of static "sortRows(Matrix)" method.
      *
      * @return result matrix (Matrix class instance) if success and
      * null if current matrix is wrong.
      *
-     * All logic description could be found in documentation of static "sortRows(Matrix)" method.
      * @see Matrix#sortRows(Matrix)
      * */
     public Matrix sortRows() {
@@ -486,7 +509,7 @@ public class Matrix {
     }
 
     /**
-     * This static method returns result of sorting of inputed matrix's columns.
+     * This static method returns result of sorting of inputed matrix's columns.<br>
      *
      * Main logic is to transpose inputed matrix (Matrix class instance) using "transpose()" method and
      * than sort each row of transposed matrix (Matrix class instance)
@@ -517,12 +540,13 @@ public class Matrix {
     }
 
     /**
-     * This method returns result of sorting of current (this) matrix's columns.
+     * This method returns result of sorting of current (this) matrix's columns.<br>
+     *
+     * All logic description could be found in documentation of static "sortCols(Matrix)" method.
      *
      * @return result matrix (Matrix class instance) if success and
      * null if current matrix is wrong.
      *
-     * All logic description could be found in documentation of static "sortCols(Matrix)" method.
      * @see Matrix#sortCols(Matrix)
      * */
     public Matrix sortCols() {
@@ -534,12 +558,12 @@ public class Matrix {
 
     /**
      * This static method returns result of matrix-validation check of inputed matrix
-     * (2-dimensional int array).
+     * (2-dimensional int array).<br>
      *
-     * for_teacher.Main logic is to check if matrix (int[][] array):
+     * Main logic is to check if matrix (int[][] array):
      *  - is null;
-     *  - is empty ("matrix" array's length < 1);
-     *  - has any row (int[] array), which is null or empty (ist length < 1);
+     *  - is empty ("matrix" array's length is less than 1);
+     *  - has any row (int[] array), which is null or empty (its length is less than 1);
      *  - has any row (int[] array), which length is not equal to length of
      *    the first row ("matrix[0]" array).
      *
@@ -569,13 +593,13 @@ public class Matrix {
 
     /**
      * This static method returns result of square-matrix-validation check of inputed matrix
-     * (2-dimensional int array).
+     * (2-dimensional int array).<br>
      *
      * Main logic is to check if matrix (int[][] array):
-     *  - is matrix
-     *    @see Matrix#isMatrix(int[][]);
+     *  - is matrix (used isMatrix() method);
      *  - its rows number ("matrix" array length) is equal to its
      *    columns number - length of any row (subarray of "matrix" array).
+     * @see Matrix#isMatrix(int[][])
      *
      * @param matrix 2-dimensional integer array (int[][]).
      *
